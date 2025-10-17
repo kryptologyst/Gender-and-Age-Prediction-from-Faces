@@ -1,0 +1,31 @@
+model:
+  name: "modern"
+  device: "auto"  # auto, cpu, cuda
+  batch_size: 1
+  confidence_threshold: 0.5
+
+face_detection:
+  cascade_path: null
+  scale_factor: 1.1
+  min_neighbors: 5
+  min_size: [30, 30]
+
+data:
+  input_dir: "data/input"
+  output_dir: "data/output"
+  synthetic_dir: "data/synthetic"
+  max_image_size: [224, 224]
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/app.log"
+
+web_app:
+  host: "localhost"
+  port: 8501
+  title: "Gender & Age Prediction"
+  debug: false
+
+age_buckets: ["0-2", "4-6", "8-12", "15-20", "25-32", "38-43", "48-53", "60-100"]
+gender_labels: ["Male", "Female"]
